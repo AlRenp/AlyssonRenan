@@ -3,6 +3,7 @@ const closedButton = document.querySelector(".offmenu");
 const nav = document.querySelector("nav");
 const container = document.querySelector(".container");
 const link = document.querySelectorAll("nav a");
+const menuItems = document.querySelectorAll('.menu a[href^="#"]');
 
 menuButton.onclick = () => {
   addClass(closedButton);
@@ -30,8 +31,18 @@ function addBlur(value) {
   container.style.filter = `blur(${value}px)`;
 }
 
+function removeHide() {
+  nav.classList.remove("hide");
+  addClass(menuButton);
+  removeClass(closedButton);
+  addBlur(0);
+}
+
+menuItems.forEach((item) => {
+  item.addEventListener("click", removeHide);
+});
+
 // scroll
-const menuItems = document.querySelectorAll('.menu a[href^="#"]');
 
 function getScrollTopByHref(element) {
   const id = element.getAttribute("href");
