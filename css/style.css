@@ -19,253 +19,232 @@
 }
 
 body {
+  position: relative;
   font-size: 1.6rem;
-  font-family: var(--ff);
   background-color: var(--backColor-body);
+  font-family: var(--ff);
+  color: var(--fontColor-primary);
 }
 
 .container {
-  max-width: 148rem;
-  padding: 2rem 10rem;
+  position: relative;
+  min-width: 45rem;
+  padding: 0 1.8rem;
   margin: 0 auto;
 }
 
-/* HEADER */
-
 header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.title {
-  font-size: 3.2rem;
-  line-height: 3.9rem;
-  font-weight: normal;
-  color: var(--fontColor-primary);
-}
-
-header nav {
-  display: flex;
-  gap: 5rem;
-}
-
-header nav a {
-  font-size: 2rem;
-  line-height: 2.1rem;
-  font-weight: normal;
-  color: var(--fontColor-primary);
-  transition: 0.1s;
-}
-header nav a:hover {
-  color: var(--fontColor-secondary);
-}
-
-/* SECTION ABOUT */
-
-.about {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 7.2rem 0;
-}
-
-.first-content {
-  max-width: 44.8rem;
-  margin-top: -17rem;
-}
-
-.first-content h1 {
-  color: var(--fontColor-secondary);
-  font-size: 6.4rem;
-  line-height: 6.7rem;
-  font-weight: 900;
-}
-
-.first-content h3 {
-  font-size: 4rem;
-  line-height: 4.2rem;
-  font-weight: 700;
-  color: var(--fontColor-primary);
-  margin: 0.7rem 0;
-}
-
-.first-content p {
-  font-size: 2rem;
-  line-height: 2.1rem;
-  font-weight: 400;
-  color: #f0e3cac2;
-}
-
-.second-content {
-  position: relative;
-}
-
-.background-img {
-  position: relative;
-}
-
-img + img {
-  position: absolute;
+  position: fixed;
   top: 0;
-  left: 5rem;
-}
+  left: 0;
+  z-index: 100;
 
-/* SECTION SKILLS */
+  width: 100%;
+  background-color: var(--backColor-Skills);
+  padding: 1.6rem 1.8rem;
+  border-bottom: 1px solid var(--backColor-body);
 
-.skill-wrapper {
-  height: 100vh;
-  display: grid;
-  justify-content: center;
-  justify-items: center;
-  gap: 10rem;
-}
-
-.intro {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 3rem;
 }
 
-.intro p {
-  max-width: 90.4rem;
+nav {
+  position: fixed;
+  top: 7rem;
+  left: 0;
+  z-index: 99;
+
+  width: 60%;
+  height: 100vh;
+  background: #1f1e1bf9;
+
+  display: grid;
+  gap: 6.4rem;
+  text-align: center;
+  place-content: center;
+  transform: translateX(-32rem);
+  transition: 0.8s;
+  visibility: hidden;
+}
+
+nav a {
+  font-size: 2rem;
+  line-height: 2.5rem;
+  color: var(--fontColor-primary);
+}
+
+nav a:hover {
+  color: var(--fontColor-secondary);
+}
+
+/* sections */
+section {
+  margin: 0 auto;
+  position: relative;
+  left: 0;
+  padding: 6.4rem 0;
+  display: grid;
+  gap: 3.2rem;
+  justify-items: center;
+}
+
+/* Fist section */
+
+#about {
+  padding: 12.8rem 0 6.4rem;
+}
+
+section .first-content {
+  width: 31.4rem;
+  margin: 6.4rem 0;
+}
+
+section .first-content h1 {
+  font-size: 4rem;
+  line-height: 4.1rem;
+  font-weight: 900;
+  color: var(--fontColor-secondary);
+}
+
+section .first-content h3 {
+  font-size: 3.2rem;
+  line-height: 3.4rem;
+  font-weight: 700;
+}
+
+section .first-content p {
   font-size: 2.4rem;
   line-height: 2.5rem;
   font-weight: normal;
-  color: var(--fontColor-primary);
 }
 
-.skills {
+section .second-content {
+  position: relative;
+  max-width: 41.3rem;
+}
+
+section .second-content img:first-child {
+  position: relative;
+  width: 100%;
+}
+
+section .second-content img:last-child {
+  width: 30rem;
+  position: absolute;
+  top: 1rem;
+  left: 3rem;
+}
+
+/* Second intro */
+#intro {
+  width: 32.2rem;
+}
+
+#intro p {
+  font-size: 2.4rem;
+  line-height: 2.5rem;
+}
+
+section .cards-wrapper {
   display: grid;
-  text-align: center;
+  gap: 1.6rem;
 }
 
-.skills h2,
-.projects h2 {
-  color: var(--fontColor-secondary);
-  font-size: 3.2rem;
-  line-height: 3.3rem;
-  font-weight: 700;
-}
-
-.cards-wrapper {
-  display: flex;
-  gap: 2rem;
-}
-
-.cards {
-  width: 20rem;
-  height: 30rem;
-  background-color: var(--backColor-Skills);
+section .cards {
+  width: 28.5rem;
+  height: 6rem;
   border-radius: 1rem;
-  display: grid;
-  place-content: center;
-  text-align: center;
+
+  display: flex;
+  gap: 1.6rem;
+  align-items: center;
+
+  background-color: var(--backColor-Skills);
+  padding: 1.4rem 3.2rem;
 }
 
-.cards p {
-  font-size: 3.2rem;
-  line-height: 3.6rem;
-  color: #f0e3ca75;
-  margin-top: 2rem;
-}
-
-/* SECTION PROJETCTS */
-.project-wrapper {
-  display: grid;
-  place-items: center;
-  margin-top: 3rem;
-}
-.projects {
-  display: grid;
-  gap: 5rem;
-  text-align: center;
-  margin: 10rem;
+.cards img {
+  width: 2.8rem;
+  height: 3.2rem;
 }
 
 .project-cards {
-  display: flex;
-  gap: 2rem;
+  display: grid;
+  gap: 1.6rem;
 }
-.project-cards .cards {
+
+#project-wrapper .cards {
+  display: grid;
+  place-content: center;
   width: 32rem;
   height: 32rem;
-  border-radius: 0;
-}
-
-/* FOOTER */
-footer {
-  border-top: 0.1px solid #f0e3ca75;
-  display: flex;
-  place-content: center;
   background: var(--backColor-Skills);
-  padding: 5rem 0;
 }
 
-.content {
-  display: flex;
-  gap: 10rem;
-}
+/* Footer */
 
-.me {
-  max-width: 21rem;
+footer {
+  margin: 6.4rem auto;
+  width: 33.9rem;
+}
+footer > div {
+  display: grid;
+  gap: 1.6rem;
+  justify-items: center;
 }
 
 .me p {
-  color: var(--fontColor-primary);
   font-size: 2rem;
-  line-height: 2.1rem;
-  margin-top: 2rem;
-}
-
-footer .title {
-  font-size: 3.6rem;
-  line-height: 4.4rem;
+  line-height: 2rem;
+  margin-bottom: 6.4rem;
 }
 
 .contacts-wrapper h2 {
-  color: var(--fontColor-secondary);
   font-size: 3.2rem;
-  line-height: 3.6rem;
-  margin-bottom: 3rem;
-}
-
-.contacts {
-  display: flex;
-  gap: 5rem;
+  line-height: 3.9rem;
+  font-weight: 900;
 }
 
 .contacts a {
   display: flex;
-  gap: 1.5rem;
+  gap: 1.6rem;
   align-items: center;
-
+  padding: 1.6rem;
   color: var(--fontColor-secondary);
   font-size: 2.4rem;
   line-height: 2.5rem;
-  font-weight: normal;
 }
 
-.contacts a:first-child {
-  margin-left: -2px;
+/* GERAL */
+.title {
+  font-family: "Inter", sans-serif;
+  font-size: 3.2rem;
+  line-height: 3.8rem;
+  font-weight: 400;
 }
 
-.contacts a + a {
-  margin-top: 3rem;
+span,
+h2 {
+  color: var(--fontColor-secondary);
 }
 
-/* GERALS */
 a {
   text-decoration: none;
 }
 
-.title {
-  font-size: 3.2rem;
-  line-height: 3.9rem;
-  font-weight: normal;
-  color: var(--fontColor-primary);
+.open {
+  display: grid;
 }
 
-.title span {
-  color: var(--fontColor-secondary);
+.hide {
+  visibility: visible;
+  transform: translateX(0);
+}
+
+button {
+  display: none;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
 }
