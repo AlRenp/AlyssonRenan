@@ -18,6 +18,10 @@
   --fontColor-Skills: #ffffff;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   position: relative;
   font-size: 1.6rem;
