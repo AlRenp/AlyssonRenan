@@ -18,6 +18,39 @@
   --fontColor-Skills: #ffffff;
 }
 
+/* Geral */
+.title {
+  font-family: "Inter", sans-serif;
+  font-size: 3.2rem;
+  line-height: 3.8rem;
+  font-weight: 400;
+}
+
+span,
+h2 {
+  color: var(--fontColor-secondary);
+}
+
+a {
+  text-decoration: none;
+}
+
+.open {
+  display: grid;
+}
+
+.hide {
+  visibility: visible;
+  transform: translateX(0);
+}
+
+button {
+  display: none;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -32,7 +65,9 @@ body {
 
 .container {
   position: relative;
-  max-width: 45rem;
+  min-width: 45rem;
+  display: grid;
+  place-items: center;
   padding: 0 1.8rem;
   margin: 0 auto;
 }
@@ -53,25 +88,6 @@ header {
   align-items: center;
 }
 
-nav {
-  position: fixed;
-  top: 7rem;
-  left: 0;
-  z-index: 99;
-
-  width: 60%;
-  height: 100vh;
-  background: #1f1e1bf9;
-
-  display: grid;
-  gap: 6.4rem;
-  text-align: center;
-  place-content: center;
-  transform: translateX(-32rem);
-  transition: 0.8s;
-  visibility: hidden;
-}
-
 nav a {
   font-size: 2rem;
   line-height: 2.5rem;
@@ -84,7 +100,6 @@ nav a:hover {
 
 /* sections */
 section {
-  margin: 0 auto;
   position: relative;
   left: 0;
   padding: 6.4rem 0;
@@ -126,7 +141,7 @@ section .first-content p {
 
 section .second-content {
   position: relative;
-  max-width: 41.3rem;
+  max-width: 100%;
 }
 
 section .second-content img:first-child {
@@ -143,7 +158,8 @@ section .second-content img:last-child {
 
 /* Second intro */
 #intro {
-  width: 32.2rem;
+  min-width: 32.2rem;
+  padding: 6.4rem 6.4rem;
 }
 
 #intro p {
@@ -182,27 +198,35 @@ section .cards {
 #project-wrapper .cards {
   display: grid;
   place-content: center;
-  width: 32rem;
-  height: 32rem;
+  width: 22rem;
+  height: 22rem;
   background: var(--backColor-Skills);
 }
 
 /* Footer */
 
-footer {
-  margin: 6.4rem auto;
-  width: 33.9rem;
+.footer-wrapper {
+  padding: 6.4rem 0;
+  display: grid;
+  gap: 6.4rem;
+  justify-content: space-between;
+  justify-items: center;
 }
-footer > div {
+
+.footer-wrapper > div {
   display: grid;
   gap: 1.6rem;
   justify-items: center;
+  text-align: center;
+}
+
+.me {
+  max-width: 33.9rem;
 }
 
 .me p {
   font-size: 2rem;
   line-height: 2rem;
-  margin-bottom: 6.4rem;
 }
 
 .contacts-wrapper h2 {
@@ -221,35 +245,102 @@ footer > div {
   line-height: 2.5rem;
 }
 
-/* GERAL */
-.title {
-  font-family: "Inter", sans-serif;
-  font-size: 3.2rem;
-  line-height: 3.8rem;
-  font-weight: 400;
+@media (max-width: 540px) {
+  nav {
+    position: fixed;
+    top: 7rem;
+    left: 0;
+    z-index: 99;
+
+    width: 60%;
+    height: 100vh;
+    background: #1f1e1bf9;
+
+    display: grid;
+    gap: 6.4rem;
+    text-align: center;
+    place-content: center;
+    transform: translateX(-32rem);
+    transition: 0.8s;
+    visibility: hidden;
+  }
 }
 
-span,
-h2 {
-  color: var(--fontColor-secondary);
+@media (min-width: 540px) {
+  header {
+    display: grid;
+    gap: 1.6rem;
+    place-content: center;
+    justify-items: center;
+    padding: 1.6rem 8.6rem;
+  }
+
+  .container {
+    min-width: 62.9rem;
+    justify-items: center;
+  }
+
+  .button-wrapper {
+    display: none;
+  }
+
+  nav {
+    display: flex;
+    gap: 6.4rem;
+  }
+
+  .first-content {
+    min-width: 44.8rem;
+  }
+
+  .second-content img:last-child {
+    min-width: 40rem;
+    right: 100rem;
+  }
+
+  #intro {
+    min-width: 57.5rem;
+    display: flex;
+  }
+
+  .cards-wrapper {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .contacts {
+    display: flex;
+  }
 }
 
-a {
-  text-decoration: none;
-}
+@media (min-width: 1024px) {
+  header {
+    display: flex;
+    place-content: inherit;
+    justify-content: space-between;
+    padding: 2rem 12rem;
+  }
 
-.open {
-  display: grid;
-}
+  .container {
+    min-width: 100vw;
+    padding: 0 12rem;
+  }
 
-.hide {
-  visibility: visible;
-  transform: translateX(0);
-}
+  section {
+    margin: auto;
+  }
 
-button {
-  display: none;
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
+  #about {
+    display: flex;
+  }
+  footer {
+    border-top: 0.5px solid var(--fontColor-primary);
+  }
+  .footer-wrapper {
+    display: flex;
+  }
+
+  .me {
+    display: grid;
+    max-width: 23rem;
+  }
 }

@@ -1,6 +1,6 @@
 const menuButton = document.querySelector(".onmenu");
 const closedButton = document.querySelector(".offmenu");
-const nav = document.querySelector("nav");
+const nav = document.querySelector(".menu");
 const container = document.querySelector(".container");
 const link = document.querySelectorAll("nav a");
 const menuItems = document.querySelectorAll('.menu a[href^="#"]');
