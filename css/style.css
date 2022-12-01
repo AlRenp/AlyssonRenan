@@ -337,6 +337,10 @@ section .cards {
     align-items: center;
   }
 
+  #intro .p {
+    max-width: 90.4rem;
+  }
+
   footer {
     border-top: 0.5px solid var(--fontColor-primary);
   }
