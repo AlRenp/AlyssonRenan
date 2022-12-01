@@ -332,6 +332,11 @@ section .cards {
   #about {
     display: flex;
   }
+
+  #intro {
+    align-items: center;
+  }
+
   footer {
     border-top: 0.5px solid var(--fontColor-primary);
   }
